@@ -1,0 +1,62 @@
+page-register {
+    .button-inner {
+        color: #fff;
+    }
+
+    .registrasi {
+        position: relative;
+        background-color: #c7670e;
+        height: 100vh;
+
+        ion-item {
+            background-color: transparent !important;
+            padding-left: 0 !important;
+            ion-input { 
+                color: #fff !important;
+            }
+        }
+
+        .list-md .item-input:last-child { 
+            border: 0; 
+        }
+
+        .item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner {
+            border-bottom-color: #fff;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+        }        
+
+        .input-has-focus .label-md[floating] {
+            color: #fff;
+        }        
+
+        button.btnReg {
+            background: transparent;
+            width: 100%;
+            height: auto !important;
+            border-radius: 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 20px;
+        }
+        
+
+        .logo {
+            text-align: center;
+
+            img {
+                width: 25%;
+            }
+            h2 {
+                font-size: 22px;
+                text-align: center;
+                color: #fff;
+                padding: 10px 0;
+                margin: 0;
+                font-weight: normal;
+            }            
+        }        
+    }
+    
+}

@@ -1,3 +1,25 @@
 page-home {
-
+    ion-header:after{
+        display: none;
+    }
+    
+    ion-header {
+        .searchbar-input {
+            box-shadow: none !important;
+            border: 1px solid #ccc;
+        }
+        .toolbar-background {
+            background: transparent;
+        }
+    }
+    ion-card {
+        margin: 0 !important;
+        width: 100% !important;
+        box-shadow: none !important;
+    }
+    .list-buku {
+        ion-slide {
+            padding: 5px;
+        }
+    }
 }

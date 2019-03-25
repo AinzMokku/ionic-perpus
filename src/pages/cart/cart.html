@@ -1,0 +1,26 @@
+<ion-header class="head">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Orders</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Tanggal :</ion-label>
+    </ion-item>
+    <ion-item *ngFor="let order of orders">
+      <ion-avatar item-start>
+        <img src="{{ order.cover }}">
+      </ion-avatar>
+      <h3>{{ order.nib }}</h3>
+      <h2>{{ order.judul }}</h2>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button class="btn-check" ion-button outline (click)="save()">CHECK OUT</button>
+  </div>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header class="head">
+  <ion-navbar>
+    <ion-title>Registrasi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="registrasi">
+  <div class="logo">
+    <img class="animated fadeInDown" src="../../assets/imgs/logoSe.png"/>
+    <h2 class="animated fadeIn">REGISTRASI</h2>
+  </div>
+  <p *ngIf="valid==0">Please Enter Valid Value !</p>
+  <form [formGroup]="frmReg" (ngSubmit)="Registrasi()">
+    <ion-item>
+      <ion-label floating>Nama</ion-label>
+      <ion-input type="text" formControlName="nama"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Alamat</ion-label>
+      <ion-input type="text" formControlName="alamat"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Telepon</ion-label>
+      <ion-input type="text" formControlName="telp"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>    
+    <button ion-button class="btnReg">CREATE ACCOUNT</button>
+  </form>
+</ion-content>

@@ -1,18 +1,28 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-content>
-    <ion-list>
+    <ion-card class="hero">
+      <img src="../assets/imgs/bg.jpg"/>
+      <ion-grid class="user">
+          <ion-row>
+            <ion-col class="avatar" col-4>
+              <img src="../assets/imgs/user-avatar.png">
+            </ion-col>
+            <ion-col class="desc" col-8>
+              <h2 *ngIf="profile">{{ profile.name }}</h2>
+              <p *ngIf="profile">{{ profile.email }}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-card>
+    <ion-list class="mainmenu">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+        <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}}
       </button>
     </ion-list>
+    <button menuClose ion-item (click)="LogOut(p)">
+      <ion-icon name="exit"> Log Out</ion-icon>
+    </button>
   </ion-content>
-
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

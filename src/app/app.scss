@@ -14,3 +14,56 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-header.head:after {
+    display:none;
+}
+ion-header.head {
+    .searchbar-input {
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+    }
+    .toolbar-background {
+        background: transparent;
+    }
+}
+ion-card.hero {
+    margin: 0 !important;
+    width: 100%;
+    height: 20%;
+
+    .user {
+        position: absolute;
+        top: 1%;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+
+        .avatar {
+            img {
+                width: 100%;
+                border-radius: 100%;
+            }
+        }
+
+        .desc {
+            padding-top: 10%;
+            padding-left: 15px;
+
+            h2 {
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+                font-size: 18px;
+                margin: 0;
+            }
+
+            p {
+                color: rgb(0, 0, 0);
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.mainmenu ion-icon {
+    margin-right: 15px;
+}

@@ -7,12 +7,56 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content>
+  <ion-card>
+    <ion-slides [autoplay]=3000>
+      <ion-slide>
+        <img src="../../assets/imgs/s1.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/s2.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/s3.jpg">
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-icon name="bookmarks"></ion-icon> Buku Terbaru
+    </ion-card-header>
+    <ion-card-content>
+      <ion-slides [slidesPerView]=3 class="list-buku">
+        <ion-slide *ngFor="let rsBuku of buku">
+          <img src="{{ rsBuku.cover }}" (click)="viewBuku(rsBuku)">
+        </ion-slide>                                
+      </ion-slides>
+  </ion-card-content>
+  </ion-card>
+  <ion-card class="news">    
+      <ion-card-content>
+        <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      </ion-card-content>
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>12 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col align-self-center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    
+    </ion-card>
 </ion-content>

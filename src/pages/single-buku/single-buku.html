@@ -1,0 +1,24 @@
+<ion-header class="head">
+  <ion-navbar>
+    <ion-title>{{ buku.judul }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="detail" padding>
+    <img src="{{ buku.cover }}">
+    <h2>{{ buku.judul }}</h2>
+    <p>Penerbit : {{ buku.nama_penerbit }} : {{ buku.tahun_terbit }} {{ buku.tempat_terbit }}</p>
+    <p>Pengarang : {{ buku.nama_pengarang }}</p>
+    <p>ISBN : {{ buku.ISBN }}</p>
+  </div>
+  <!-- Menampilkan Koleksi -->
+  <ion-list>
+    <ion-item *ngFor="let rsKoleksi of koleksi">
+      <h2>{{ rsKoleksi.no_induk_buku }}</h2>
+      <h3>{{ rsKoleksi.status==0 ? "Tersedia" : "Terpinjam" }}</h3>      
+      <button class="{{cekKode(rsKoleksi.no_induk_buku)}}" type="button" *ngIf="rsKoleksi.status==0" ion-button clear item-end (click)="savePinjam(rsKoleksi.no_induk_buku,buku)">RENT</button>      
+    </ion-item>
+  </ion-list>
+
+</ion-content>

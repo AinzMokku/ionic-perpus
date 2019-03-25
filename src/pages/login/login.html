@@ -1,0 +1,21 @@
+<ion-content padding class="login">
+  <div class="logo">
+    <img class="animated fadeInDown" src="../../assets/imgs/logoSe.png"/>
+    <h2 class="animated fadeIn">LOGIN</h2>
+  </div>
+  <p>{{ mess }}</p>
+  <form [formGroup]="frmLogin" (ngSubmit)="Login()">
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+      <p *ngIf="frmLogin.get('email').hasError('required')"></p> 
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <button ion-button class="btnLogin">Sign In</button>
+    <button type="button" ion-button class="btnReg" (click)="Registrasi()">Don't have an Account ? Sign Up</button>
+  </form>
+</ion-content>

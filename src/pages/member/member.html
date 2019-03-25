@@ -1,0 +1,52 @@
+<ion-header class="head">
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>    
+      <ion-title>Member</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="member" padding>
+    <div class="avatar">
+      <div class="image">
+        <img src="{{ pic }}" (click)="getImage($event)"/>
+      </div>
+    </div>   
+    <p *ngIf="valid==0">Please Enter Valid Value !</p>
+    <form [formGroup]="frmMember" (ngSubmit)="saveMember()">
+      <ion-item>
+          <ion-label fixed>Nama</ion-label>
+        <ion-input type="text" formControlName="nama" placeholder="Nama"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>Tempat Lahir</ion-label>
+        <ion-input type="text" formControlName="tempat" placeholder="Tempat Lahir"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>Tanggal Lahir</ion-label>
+          <ion-datetime displayFormat="DD MMMM YYYY" pickerFormat="DD MMMM YYYY" formControlName="tgl_lahir"></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>Jenis Kelamin</ion-label>
+          <ion-select formControlName="jk">
+            <ion-option value="1">Laki-Laki</ion-option>
+            <ion-option value="2">Perempuan</ion-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>Alamat</ion-label>
+          <ion-input type="text" formControlName="alamat" placeholder="Alamat"></ion-input>
+      </ion-item>  
+      <ion-item>
+          <ion-label fixed>Kota</ion-label>
+          <ion-input type="text" formControlName="kota" placeholder="Kota"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label fixed>Telepon</ion-label>
+          <ion-input type="text" formControlName="telp" placeholder="Telepon"></ion-input>
+      </ion-item>                 
+      <button ion-button class="btn-update" outline>UPDATE</button>
+    </form>
+  </ion-content>
+  

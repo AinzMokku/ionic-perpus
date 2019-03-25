@@ -1,0 +1,28 @@
+<!--
+  Generated template for the BukuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Katalog Buku</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let rsBuku of buku">
+      <ion-thumbnail item-start>
+        <img src="{{ rsBuku.cover }}">
+      </ion-thumbnail>
+      <h2>{{ rsBuku.judul }}</h2>
+      <p>{{ rsBuku.nama_pengarang }} - {{ rsBuku.nama_penerbit }}</p>
+      <p>{{ rsBuku.nama_kategori }}</p>
+      <button ion-button clear item-end (click)="viewBuku(rsBuku)">View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
